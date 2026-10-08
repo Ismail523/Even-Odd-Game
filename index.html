@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even-Odd Game</title>
+</head>
+<body>
+    <script>
+
+        alert("ODD-EVEN-GAME\n This is an Even-Odd Game Againts Computer \n Good Luck!");
+       
+    // Odd Even Game 3 rounds
+let userScore = 0;
+let systemScore = 0;
+const name = prompt("Enter Your Name:")
+alert(`Welcome to the Game ${name} !`);
+
+for (let round = 1; round <= 3; round++) {
+
+    alert(" Let's Start Round " + round);
+
+    // User chooses Odd or Even
+    let userChoice = prompt("Choose Odd or Even:");
+
+
+    // User inputs a value
+    let userValue = parseInt(prompt("Enter your value:"));
+
+    // System gives one output
+    let systemValue = Math.floor(Math.random()*100);
+
+    // Add both values
+    let sum = userValue + systemValue;
+
+    alert(`Your value is: ${userValue}\n Computer's value is: ${systemValue}\n Sum is: ${sum}` )
+
+    // Check Odd or Even
+    if (sum % 2 === 0) {
+
+    alert("Result: Even");
+
+        if (userChoice === "even") {
+            alert("You win this round!");
+            userScore++;
+        } else {
+            alert("Computer wins this round!");
+            systemScore++;
+        }
+
+    } else {
+
+        alert("Result: Odd");
+
+        if (userChoice === "odd") {
+            alert("You win this round!");
+            userScore++;
+        } else {
+            alert("Computer wins this round!");
+            systemScore++;
+        }
+    }
+
+    alert(`Your Score is: ${userScore}\n Computer's Score: ${systemScore}`)
+
+    // Check if someone already won 2 rounds
+            if (userScore == 2 || systemScore == 2) {
+                break;
+            }
+}
+
+     
+        
+
+// // Final Result
+
+   userScore > systemScore ? alert(`👍congratulation ${name} !! You Won the Game Againts Computer`): alert("👎You Lost the Game!!\n Better luck next time")
+
+    
+    </script>
+</body>
+</html>
